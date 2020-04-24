@@ -1,9 +1,12 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
+import HomeContainer from './containers/home_container'
 
 const App = () => (
     <div>
-        <h1>WORKING</h1>
+        <Switch>
+            <Route path="/home" component={HomeContainer} />
+        </Switch>
     </div>
 )
 
