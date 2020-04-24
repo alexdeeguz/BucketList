@@ -114,3 +114,210 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 24ms (Views: 23.3ms | ActiveRecord: 0.0ms)
 
 
+  [1m[35m (24.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3872035847444507295)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateBucketListItems (20200424073416)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "bucket_list_items" ("id" bigserial primary key, "category" character varying, "name" character varying, "price" float, "description" character varying, "url" character varying, "completed" boolean DEFAULT FALSE, "date_completed" date, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200424073416_create_bucket_list_items.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200424073416"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-04-24 07:35:22.115970"], ["updated_at", "2020-04-24 07:35:22.115970"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3872035847444507295)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/alexdeeguz/.rbenv/versions/2.5.1/bin/annotate:23
+Started GET "/" for ::1 at 2020-04-24 00:53:44 -0700
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/alexdeeguz/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 1544ms (Views: 1539.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-24 00:58:51 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 47ms (Views: 45.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-24 01:00:08 -0700
+Processing by StaticPagesController#root as */*
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 68ms (Views: 67.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/bucket_list_items" for ::1 at 2020-04-24 01:00:30 -0700
+Processing by Api::BucketListItemsController#index as JSON
+  Rendering api/bucket_list_items/index.json.jbuilder
+  [1m[36mBucketListItem Load (1.4ms)[0m  [1m[34mSELECT "bucket_list_items".* FROM "bucket_list_items"[0m
+  ↳ app/views/api/bucket_list_items/index.json.jbuilder:1
+  Rendered api/bucket_list_items/index.json.jbuilder (5.5ms)
+Completed 200 OK in 17ms (Views: 9.8ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/api/bucket_list_items" for ::1 at 2020-04-24 01:00:44 -0700
+Processing by Api::BucketListItemsController#index as JSON
+  Rendering api/bucket_list_items/index.json.jbuilder
+  [1m[36mBucketListItem Load (0.3ms)[0m  [1m[34mSELECT "bucket_list_items".* FROM "bucket_list_items"[0m
+  ↳ app/views/api/bucket_list_items/index.json.jbuilder:1
+  Rendered api/bucket_list_items/index.json.jbuilder (1.1ms)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBucketListItem Create (3.8ms)[0m  [1m[32mINSERT INTO "bucket_list_items" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "test"], ["created_at", "2020-04-24 08:01:05.715966"], ["updated_at", "2020-04-24 08:01:05.715966"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/bucket_list_items" for ::1 at 2020-04-24 01:01:09 -0700
+Processing by Api::BucketListItemsController#index as JSON
+  Rendering api/bucket_list_items/index.json.jbuilder
+  [1m[36mBucketListItem Load (0.4ms)[0m  [1m[34mSELECT "bucket_list_items".* FROM "bucket_list_items"[0m
+  ↳ app/views/api/bucket_list_items/index.json.jbuilder:1
+  Rendered api/bucket_list_items/index.json.jbuilder (20.2ms)
+Completed 200 OK in 29ms (Views: 24.2ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/" for ::1 at 2020-04-24 01:19:10 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 309ms (Views: 308.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-24 01:19:31 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 312ms (Views: 311.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-24 01:20:35 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 309ms (Views: 309.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-24 01:22:13 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 279ms (Views: 277.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/bucket_list_items" for ::1 at 2020-04-24 01:22:24 -0700
+Processing by Api::BucketListItemsController#index as JSON
+  Rendering api/bucket_list_items/index.json.jbuilder
+  [1m[36mBucketListItem Load (0.8ms)[0m  [1m[34mSELECT "bucket_list_items".* FROM "bucket_list_items"[0m
+  ↳ app/views/api/bucket_list_items/index.json.jbuilder:1
+  Rendered api/bucket_list_items/index.json.jbuilder (2.1ms)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/bucket_list_items" for ::1 at 2020-04-24 01:23:46 -0700
+Processing by Api::BucketListItemsController#index as JSON
+  Rendering api/bucket_list_items/index.json.jbuilder
+  [1m[36mBucketListItem Load (0.3ms)[0m  [1m[34mSELECT "bucket_list_items".* FROM "bucket_list_items"[0m
+  ↳ app/views/api/bucket_list_items/index.json.jbuilder:1
+  Rendered api/bucket_list_items/index.json.jbuilder (1.4ms)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-04-24 01:25:12 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 309ms (Views: 308.0ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/api/bucket_list_items/[object%20Object]" for ::1 at 2020-04-24 01:25:30 -0700
+Processing by Api::BucketListItemsController#update as JSON
+  Parameters: {"id"=>"[object Object]"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
+
+Started PATCH "/api/bucket_list_items/[object%20Object]" for ::1 at 2020-04-24 01:25:45 -0700
+Processing by Api::BucketListItemsController#update as JSON
+  Parameters: {"id"=>"[object Object]"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
+
+Started PATCH "/api/bucket_list_items/[object%20Object]" for ::1 at 2020-04-24 01:26:15 -0700
+Processing by Api::BucketListItemsController#update as JSON
+  Parameters: {"id"=>"[object Object]"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
+
+Started PATCH "/api/bucket_list_items/[object%20Object]" for ::1 at 2020-04-24 01:26:47 -0700
+Processing by Api::BucketListItemsController#update as JSON
+  Parameters: {"id"=>"[object Object]"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
+
+Started PATCH "/api/bucket_list_items/[object%20Object]" for ::1 at 2020-04-24 01:27:20 -0700
+Processing by Api::BucketListItemsController#update as JSON
+  Parameters: {"id"=>"[object Object]"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 2ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
+
+Started PATCH "/api/bucket_list_items/[object%20Object]" for ::1 at 2020-04-24 01:28:47 -0700
+Processing by Api::BucketListItemsController#update as JSON
+  Parameters: {"id"=>"[object Object]"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
+
+Started PATCH "/api/bucket_list_items/1" for ::1 at 2020-04-24 01:30:01 -0700
+Processing by Api::BucketListItemsController#update as JSON
+  Parameters: {"id"=>"1"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
+
