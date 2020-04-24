@@ -43,9 +43,9 @@ class Home extends React.Component {
                     <h2>TOTAL BUCKET LIST ITEMS:</h2>
                 </div>
 
-                <Food addItem={this.props.addItem}/>
-                <Travel addItem={this.props.addItem}/>
-                <Activities addItem={this.props.addItem}/>
+                <Food addItem={this.props.addItem} items={this.props.bucketListItems}/>
+                <Travel addItem={this.props.addItem} items={this.props.bucketListItems}/>
+                <Activities addItem={this.props.addItem} items={this.props.bucketListItems}/>
             </div>
         )
     }
