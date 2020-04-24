@@ -1,9 +1,12 @@
 import React from 'react'
+import Food from './food'
+import Activities from './activities'
+import Travel from './travel'
 
 class Home extends React.Component {
     constructor(props) {
         super(props)
-        this.handle = this.handle.bind(this)
+        this.handleScroll = this.handleScroll.bind(this)
     }
 
     handleScroll(e) {
@@ -20,6 +23,10 @@ class Home extends React.Component {
         window.scrollTo(0, position-50)
     }
 
+    componentDidMount() {
+        this.props.getAllItems()
+    }
+
     render() {
         return (
             <div className="home">
@@ -31,6 +38,14 @@ class Home extends React.Component {
                         <li onClick={this.handleScroll}>Activities</li>
                     </ul>
                 </nav>
+
+                <div>
+                    <h2>TOTAL BUCKET LIST ITEMS:</h2>
+                </div>
+
+                <Food addItem={this.props.addItem}/>
+                <Travel addItem={this.props.addItem}/>
+                <Activities addItem={this.props.addItem}/>
             </div>
         )
     }

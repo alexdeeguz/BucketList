@@ -29,3 +29,6 @@ export const updateItem = id => dispatch => itemAPIUtil.updateItem(id)
 
 export const deleteItem = id => dispatch => itemAPIUtil.deleteItem(id)
     .then(() => dispatch(removeItem(id)))
+
+export const createItem = item => dispatch => itemAPIUtil.postItem(item)
+    .then(createdItem => dispatch(receiveItem(createdItem)))

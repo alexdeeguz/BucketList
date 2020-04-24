@@ -1,1 +1,1 @@
-json.extract! item, :id, :category, :name, :price, :description, :url, :completed, :date_completed
+json.extract! @bucket_list_item, :id, :category, :name, :price, :description, :url, :completed, :date_completed

@@ -1,5 +1,7 @@
 class Api::BucketListItemsController < ApplicationController
 
+    skip_before_action :verify_authenticity_token
+    
     def create
         @bucket_list_item = BucketListItem.new(bucket_list_item_params)
         if @bucket_list_item.save
