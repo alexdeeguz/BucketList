@@ -14,5 +14,7 @@
 #  updated_at     :datetime         not null
 #
 class BucketListItem < ApplicationRecord
-    
+    has_many :subcategories,
+        foreign_key: :bucket_list_item_id,
+        class_name: :Subcategory
 end

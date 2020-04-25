@@ -1,0 +1,25 @@
+# == Schema Information
+#
+# Table name: subcategories
+#
+#  id                  :bigint           not null, primary key
+#  name                :string
+#  price               :float
+#  url                 :string
+#  bucket_list_item_id :integer
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#  completed           :boolean
+#
+
+one:
+  name: MyString
+  price: 1.5
+  url: MyString
+  bucket_list_item_id: 1
+
+two:
+  name: MyString
+  price: 1.5
+  url: MyString
+  bucket_list_item_id: 1

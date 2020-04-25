@@ -1,0 +1,1 @@
+json.extract! subcategory, :id, :name, :price, :url, :completed, :bucket_list_item_id

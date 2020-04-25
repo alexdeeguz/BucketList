@@ -1,4 +1,5 @@
 import React from 'react'
+import IndividualItem from './individual_item'
 
 class Travel extends React.Component {
     constructor(props) {
@@ -29,15 +30,24 @@ class Travel extends React.Component {
     }
 
     render() {
+        let items = this.props.items ? this.props.items.filter(item => item.category === "travel") : ""
         return (
-            <div id="food">
+            <div id="travel">
                 <h1>TRAVEL</h1>
                 <form>
-                    <input type="text" value={this.state.name} onChange={(e) => this.updateField(e, "name")} placeholder="LOCATION" />
+                    <input type="text" value={this.state.name} onChange={(e) => this.updateField(e, "name")} placeholder="NAME/LOCATION" />
                     <input type="number" step="1" value={this.state.price} onChange={(e) => this.updateField(e, "price")} placeholder="$$$" />
                     <input type="text" value={this.state.url} onChange={(e) => this.updateField(e, "url")} placeholder="URL" />
                     <button onClick={this.handleSubmit}>Add</button>
                 </form>
+
+                <div>
+                    {
+                        items.map(item => (
+                            <IndividualItem key={item.id} item={item} />
+                        ))
+                    }
+                </div>
             </div>
         )
     }

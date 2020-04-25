@@ -1,4 +1,5 @@
 import React from 'react'
+import IndividualItem from './individual_item'
 
 class Activities extends React.Component {
     constructor(props) {
@@ -29,8 +30,10 @@ class Activities extends React.Component {
     }
 
     render() {
+        let items = this.props.items ? this.props.items.filter(item => item.category === "activities") : ""
+
         return (
-            <div id="food">
+            <div id="activities">
                 <h1>ACTIVITIES</h1>
                 <form>
                     <input type="text" value={this.state.name} onChange={(e) => this.updateField(e, "name")} placeholder="ACTIVITY" />
@@ -38,6 +41,14 @@ class Activities extends React.Component {
                     <input type="text" value={this.state.url} onChange={(e) => this.updateField(e, "url")} placeholder="URL" />
                     <button onClick={this.handleSubmit}>Add</button>
                 </form>
+
+                <div>
+                    {
+                        items.map(item => (
+                            <IndividualItem key={item.id} item={item} />
+                        ))
+                    }
+                </div>
             </div>
         )
     }
