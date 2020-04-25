@@ -4,5 +4,6 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     resources :bucket_list_items, only: [:create, :index, :update, :destroy]
+    resources :subcategories, only: [:create, :index, :update, :destroy]
   end
 end
