@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import Root from './components/root'
 import configureStore from './store/store'
 import { getAllItems, updateItem } from './actions/bucket_list_item_actions'
+import { getAllSubcategories } from './actions/subcategory_actions'
 
 document.addEventListener('DOMContentLoaded', () => {
     const store = configureStore()
@@ -12,5 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
     window.dispatch = store.dispatch
     window.getAllItems = getAllItems
     window.updateItem = updateItem
+    window.getAllSubcategories = getAllSubcategories
 })
 

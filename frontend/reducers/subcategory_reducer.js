@@ -7,10 +7,10 @@ const SubcategoryReducer = (state = {}, action) => {
     switch (action.type) {
         case RECEIVE_ALL_SUBCATEGORIES:
             return action.subcategories
-        case RECEIVE_ITEM:
+        case RECEIVE_SUBCATEGORY:
             newState[action.subcategory.id] = action.subcategory
             return newState
-        case REMOVE_ITEM:
+        case REMOVE_SUBCATEGORY:
             delete newState[action.id]
         default:
             return state

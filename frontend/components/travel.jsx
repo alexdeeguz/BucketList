@@ -36,7 +36,7 @@ class Travel extends React.Component {
                 <h1>TRAVEL</h1>
                 <form>
                     <input type="text" value={this.state.name} onChange={(e) => this.updateField(e, "name")} placeholder="NAME/LOCATION" />
-                    <input type="number" step="1" value={this.state.price} onChange={(e) => this.updateField(e, "price")} placeholder="$$$" />
+                    {/* <input type="number" step="1" value={this.state.price} onChange={(e) => this.updateField(e, "price")} placeholder="$$$" /> */}
                     <input type="text" value={this.state.url} onChange={(e) => this.updateField(e, "url")} placeholder="URL" />
                     <button onClick={this.handleSubmit}>Add</button>
                 </form>
@@ -44,7 +44,11 @@ class Travel extends React.Component {
                 <div>
                     {
                         items.map(item => (
-                            <IndividualItem key={item.id} item={item} />
+                            <IndividualItem 
+                                key={item.id} item={item} 
+                                addSubcategory={this.props.addSubcategory} 
+                                getSubcategories={this.props.getSubcategories} 
+                                subcategories={this.props.subcategories}/>
                         ))
                     }
                 </div>

@@ -4,7 +4,7 @@ import subcategoryReducer from './subcategory_reducer'
 
 const rootReducer = combineReducers({
     bucketListItems: bucketListItemsReducer,
-    subCategories: subcategoryReducer
+    subcategories: subcategoryReducer
 })
 
 export default rootReducer

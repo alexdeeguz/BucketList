@@ -1,5 +1,7 @@
 class Api::SubcategoriesController < ApplicationController
 
+    skip_before_action :verify_authenticity_token
+
     def create
         @subcategory = Subcategory.new(subcategory_params)
         if @subcategory.save
@@ -29,7 +31,7 @@ class Api::SubcategoriesController < ApplicationController
     end
 
     def subcategory_params
-        params.require(:bucket_list_item).permit(
+        params.require(:subcategory).permit(
             :name, :price, :url, :completed, :bucket_list_item_id
         )
     end
