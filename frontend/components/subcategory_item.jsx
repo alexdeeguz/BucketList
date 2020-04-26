@@ -22,7 +22,7 @@ class SubcategoryItem extends React.Component {
                 {this.state.toggleDetails === true ?
                     <div>
                         <p>Price: ${this.props.subcategory.price}</p>
-                        <a href="">Link</a>
+                        <a href={this.props.subcategory.url}>Link</a>
                     </div> : ""
                 }   
             </div>
