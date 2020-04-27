@@ -24,13 +24,14 @@ class Activities extends React.Component {
         })
     }
 
+
     handleSubmit(e) {
         e.preventDefault()
         this.props.addItem(this.state)
     }
 
     render() {
-        let items = this.props.items ? this.props.items.filter(item => item.category === "activities") : ""
+        let items = this.props.items ? this.props.items.filter(item => item.category === "activity") : ""
 
         return (
             <div id="activities">
