@@ -40,7 +40,7 @@ class Activities extends React.Component {
                     <input type="text" value={this.state.name} onChange={(e) => this.updateField(e, "name")} placeholder="ACTIVITY" />
                     <input type="number" step="1" value={this.state.price} onChange={(e) => this.updateField(e, "price")} placeholder="$$$" />
                     <input type="text" value={this.state.url} onChange={(e) => this.updateField(e, "url")} placeholder="URL" />
-                    <button onClick={this.handleSubmit}>Add</button>
+                    <p id="add-button" onClick={this.handleSubmit}>ADD</p>
                 </form>
 
                 <div>

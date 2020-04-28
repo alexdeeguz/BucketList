@@ -68,10 +68,10 @@ class IndividualItem extends React.Component {
         let subcategories = this.props.subcategories ? this.props.subcategories.filter(el => el.bucket_list_item_id === this.props.item.id) : ""
         const { name, price, url, category } = this.props.item
         return (
-            <div>
+            <div className="item">
                 <h2 onClick={this.toggleDetails}>{name}</h2>
                 { this.state.toggleDetails === true ? 
-                <div>
+                <div className="item-details">
                     {/* FOOD */}
                     {category === "food" || category === "activity" ?  
           

@@ -22,3 +22,35 @@ h1 {
     text-align: center;
 }
 
+body {
+    background-color: rgb(238, 95, 95);
+    color: white;
+}
+
+form {
+    // border: 1px solid lime;
+    margin-left: 20%;
+    margin-right: 20%;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+}
+
+form > input {
+    padding: 20px;
+    width: 200px;
+    outline: none;
+    border: none;
+}
+
+#add-button {
+    color: blue;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+.item-details {
+    background-color: white;
+    color: black;
+}
+
