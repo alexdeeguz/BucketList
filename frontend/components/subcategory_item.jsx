@@ -17,7 +17,7 @@ class SubcategoryItem extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="subcategory">
                 <h3 className="cursor" onClick={this.toggleDetails}>{this.props.subcategory.name}</h3>
                 {this.state.toggleDetails === true ?
                     <div>

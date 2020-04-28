@@ -60,7 +60,7 @@ class IndividualItem extends React.Component {
 
     calculateTripCost() {
         let sum = 0
-        this.props.subcategories.forEach(el => sum += el.price)
+        this.props.subcategories.filter(el => el.bucket_list_item_id === this.props.item.id).forEach(el => sum += el.price)
         return sum
     }
 
