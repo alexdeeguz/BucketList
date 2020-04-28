@@ -66,11 +66,11 @@ class IndividualItem extends React.Component {
                 { this.state.toggleDetails === true ? 
                 <div>
                     {/* FOOD */}
-                    {category === "food" ?  
+                    {category === "food" || category === "activity" ?  
           
                     <div>
                         <p>Price: ${price}</p>
-                        <a href={url}>Link</a>
+                        <a href={url} target="_blank">Link</a>
                     </div> : ""
                     }
                     {/* TRAVEL */}
