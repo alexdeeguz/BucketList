@@ -27,6 +27,10 @@ class Activities extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault()
+        if (this.state.name === "") {
+            alert("Please enter information")
+            return
+        }
         this.props.addItem(this.state)
     }
 
@@ -43,7 +47,7 @@ class Activities extends React.Component {
                     <p id="add-button" onClick={this.handleSubmit}>ADD</p>
                 </form>
 
-                <div>
+                <div className="item-container">
                     {
                         items.map(item => (
                             <IndividualItem key={item.id} item={item} />

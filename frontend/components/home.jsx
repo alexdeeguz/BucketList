@@ -40,7 +40,7 @@ class Home extends React.Component {
                 </nav>
 
                 <div>
-        <h2>TOTAL BUCKET LIST ITEMS: {this.props.bucketListItems.length}</h2>
+                    <h2>TOTAL BUCKET LIST ITEMS: {this.props.bucketListItems.length}</h2>
                 </div>
 
                 <Food addItem={this.props.addItem} items={this.props.bucketListItems}/>

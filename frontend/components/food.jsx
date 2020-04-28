@@ -26,6 +26,10 @@ class Food extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault()
+        if (this.state.name === "") {
+            alert("Please enter information")
+            return
+        }
         this.props.addItem(this.state)
     }
 
@@ -40,7 +44,7 @@ class Food extends React.Component {
                     <input type="text" value={this.state.url} onChange={(e) => this.updateField(e, "url")} placeholder="URL"/>
                     <p id="add-button" onClick={this.handleSubmit}>ADD</p>
                 </form>
-                <div>
+                <div className="item-container">
                     {
                         items.map(item => (
                             <IndividualItem key={item.id} item={item}/>

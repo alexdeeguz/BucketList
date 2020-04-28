@@ -69,7 +69,7 @@ class IndividualItem extends React.Component {
         const { name, price, url, category } = this.props.item
         return (
             <div className="item">
-                <h2 onClick={this.toggleDetails}>{name}</h2>
+                <h2 id="item-name" onClick={this.toggleDetails}>{name.toUpperCase()}</h2>
                 { this.state.toggleDetails === true ? 
                 <div className="item-details">
                     {/* FOOD */}
@@ -82,7 +82,7 @@ class IndividualItem extends React.Component {
                     }
                     {/* TRAVEL */}
                     {category === "travel" ? <p>Total cost of trip: {this.calculateTripCost()}</p> : ""}
-                    {category === "travel" ? <p className="cursor" onClick={this.toggleSubcategoryForm}>Add Subcategory</p> : ""}
+                    {category === "travel" ? <p id="add-button" className="cursor" onClick={this.toggleSubcategoryForm}>Add Subcategory</p> : ""}
                     {category === "travel" && this.state.toggleSubcategoryForm === true ? 
                     <form>
                         <input type="text" value={this.state.name} onChange={(e) => this.updateField(e, "name")} placeholder="SUBCATEGORY"/>

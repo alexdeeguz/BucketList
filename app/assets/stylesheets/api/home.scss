@@ -25,6 +25,7 @@ h1 {
 body {
     background-color: rgb(238, 95, 95);
     color: white;
+    font-family: 'Manrope', sans-serif;
 }
 
 form {
@@ -34,6 +35,7 @@ form {
     display: flex;
     justify-content: space-between;
     background-color: white;
+    margin-bottom: 20px;
 }
 
 form > input {
@@ -50,7 +52,38 @@ form > input {
 }
 
 .item-details {
-    background-color: white;
+    border: 1px solid white;
+    border-radius: 10px;
     color: black;
+    margin-top: 10px;
+    // height: 100px;
+    margin-bottom: 10px;
+    margin-left: 10%;
+}
+
+.item-details > form {
+    margin-left: 0;
+}
+
+.item {
+    border: 1px solid white;
+    margin-top: 10px;
+    background-color: white;
+}
+
+.item-container {
+    color: rgb(238, 95, 95);
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+#item-name {
+    cursor: pointer;
+    width: fit-content;
+    margin-left: 5%;
+}
+
+#food > h1, #activities > h1, #travel > h1 {
+    text-decoration: underline;
 }
 
