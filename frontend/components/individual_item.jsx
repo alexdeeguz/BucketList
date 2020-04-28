@@ -16,6 +16,11 @@ class IndividualItem extends React.Component {
         this.toggleSubcategoryForm = this.toggleSubcategoryForm.bind(this)
         this.updateField = this.updateField.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.calculateTripCost = this.calculateTripCost.bind(this)
+    }
+
+    componentDidMount() {
+        this.props.item.category === "travel" ? this.props.getSubcategories() : ""
     }
 
     toggleDetails(e) {
@@ -53,8 +58,10 @@ class IndividualItem extends React.Component {
         })
     }
 
-    componentDidMount() {
-        this.props.item.category === "travel" ? this.props.getSubcategories() : ""
+    calculateTripCost() {
+        let sum = 0
+        this.props.subcategories.forEach(el => sum += el.price)
+        return sum
     }
 
     render() {
@@ -74,6 +81,7 @@ class IndividualItem extends React.Component {
                     </div> : ""
                     }
                     {/* TRAVEL */}
+                    {category === "travel" ? <p>Total cost of trip: {this.calculateTripCost()}</p> : ""}
                     {category === "travel" ? <p className="cursor" onClick={this.toggleSubcategoryForm}>Add Subcategory</p> : ""}
                     {category === "travel" && this.state.toggleSubcategoryForm === true ? 
                     <form>
