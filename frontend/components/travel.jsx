@@ -31,6 +31,10 @@ class Travel extends React.Component {
             return
         }
         this.props.addItem(this.state)
+        this.setState({
+            name: "",
+            url: ""
+        })
     }
 
     render() {

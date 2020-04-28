@@ -31,6 +31,11 @@ class Food extends React.Component {
             return
         }
         this.props.addItem(this.state)
+        this.setState({
+            name: "",
+            price: "",
+            url: ""
+        })
     }
 
     render() {
