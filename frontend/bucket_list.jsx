@@ -1,11 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { login, logout } from './utils/session_utils'
+import configureStore from './store/store'
 
 document.addEventListener('DOMContentLoaded', () => {
+    const store = configureStore()
     const root = document.getElementById('root')
     ReactDOM.render(<h1>Working</h1>, root)
 
-    window.login = login
-    window.logout = logout
+    window.getState = store.getState
+    window.dispatch = store.dispatch
 })
