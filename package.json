@@ -1,9 +1,9 @@
 {
-  "name": "ac_bucket_list",
+  "name": "bucket_list",
   "private": true,
   "dependencies": {
-    "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.5",
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
     "@babel/preset-react": "^7.9.4",
     "babel-loader": "^8.1.0",
     "react": "^16.13.1",
@@ -18,20 +18,25 @@
   },
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "webpack.config.js",
   "directories": {
     "lib": "lib",
     "test": "test"
   },
-  "engines": {
-    "node": "10.13.0",
-    "npm": "6.4.1"
-  },
+  "devDependencies": {},
   "scripts": {
     "start": "webpack --watch --mode=development",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "webpack"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexdeeguz/AC-Bucket-List.git"
+  },
+  "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexdeeguz/AC-Bucket-List/issues"
+  },
+  "homepage": "https://github.com/alexdeeguz/AC-Bucket-List#readme"
 }
