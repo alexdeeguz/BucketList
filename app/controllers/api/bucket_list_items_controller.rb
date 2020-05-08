@@ -1,7 +1,11 @@
 class Api::BucketListItemsController < ApplicationController
 
     def index
-        @bucket_list_items = current_user.bucket_list_items
+        if !current_user
+            @bucket_list_items = [] 
+        else 
+            @bucket_list_items = current_user.bucket_list_items
+        end
         render :index
     end
 

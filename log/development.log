@@ -3905,3 +3905,237 @@ Migrating to Add (20200508044605)
   ↳ bin/rails:9
   [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /Users/alexdeeguz/.rbenv/versions/2.5.1/bin/annotate:23
+Started GET "/" for ::1 at 2020-05-07 22:08:49 -0700
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/alexdeeguz/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 330ms (Views: 328.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/bucket_list_items" for ::1 at 2020-05-07 22:09:27 -0700
+Processing by Api::BucketListItemsController#index as JSON
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `bucket_list_items' for nil:NilClass:
+  app/controllers/api/bucket_list_items_controller.rb:4:in `index'
+
+Started GET "/" for ::1 at 2020-05-07 22:10:35 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 32ms (Views: 31.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-07 22:10:35 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 26ms (Views: 25.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-07 22:10:36 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 26ms (Views: 25.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/bucket_list_items" for ::1 at 2020-05-07 22:10:37 -0700
+Processing by Api::BucketListItemsController#index as JSON
+  Rendering api/bucket_list_items/index.json.jbuilder
+  Rendered api/bucket_list_items/index.json.jbuilder (3.9ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `each' for nil:NilClass:
+  app/views/api/bucket_list_items/index.json.jbuilder:1:in `_app_views_api_bucket_list_items_index_json_jbuilder__3159800178903988902_70224978099400'
+
+Started GET "/" for ::1 at 2020-05-07 22:10:55 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 24ms (Views: 23.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-07 22:11:25 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 32ms (Views: 31.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-07 22:11:26 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 27ms (Views: 26.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/bucket_list_items" for ::1 at 2020-05-07 22:11:27 -0700
+Processing by Api::BucketListItemsController#index as JSON
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `bucket_list_items' for nil:NilClass:
+  app/controllers/api/bucket_list_items_controller.rb:5:in `index'
+
+Started GET "/" for ::1 at 2020-05-07 22:12:04 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 34ms (Views: 33.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-07 22:12:04 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 34ms (Views: 33.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-07 22:12:05 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 26ms (Views: 25.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/bucket_list_items" for ::1 at 2020-05-07 22:12:06 -0700
+Processing by Api::BucketListItemsController#index as JSON
+  Rendering api/bucket_list_items/index.json.jbuilder
+  Rendered api/bucket_list_items/index.json.jbuilder (0.4ms)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBucketListItem Create (2.1ms)[0m  [1m[32mINSERT INTO "bucket_list_items" ("category", "name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category", "food"], ["name", "test"], ["created_at", "2020-05-08 05:13:31.904618"], ["updated_at", "2020-05-08 05:13:31.904618"], ["user_id", 1]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2020-05-07 22:13:35 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 24ms (Views: 23.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-07 22:13:36 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 32ms (Views: 28.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/bucket_list_items" for ::1 at 2020-05-07 22:13:39 -0700
+Processing by Api::BucketListItemsController#index as JSON
+  Rendering api/bucket_list_items/index.json.jbuilder
+  Rendered api/bucket_list_items/index.json.jbuilder (0.5ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-07 22:14:28 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Started GET "/" for ::1 at 2020-05-07 22:14:29 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 309ms (Views: 308.1ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 163ms (Views: 163.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-07 22:14:29 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 37ms (Views: 35.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/bucket_list_items" for ::1 at 2020-05-07 22:14:35 -0700
+Processing by Api::BucketListItemsController#index as JSON
+  Rendering api/bucket_list_items/index.json.jbuilder
+  Rendered api/bucket_list_items/index.json.jbuilder (0.4ms)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-07 22:14:56 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 30ms (Views: 29.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-07 22:14:57 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 27ms (Views: 26.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/bucket_list_items" for ::1 at 2020-05-07 22:14:59 -0700
+Processing by Api::BucketListItemsController#index as JSON
+  Rendering api/bucket_list_items/index.json.jbuilder
+  Rendered api/bucket_list_items/index.json.jbuilder (0.4ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/sessions" for ::1 at 2020-05-07 22:15:40 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"alex", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "alex"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:32
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "alex"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:32
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "U6553gMHqCfnmQNvv-ThAA"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:32
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "U6553gMHqCfnmQNvv-ThAA"], ["updated_at", "2020-05-08 05:15:40.950273"], ["id", 1]]
+  ↳ app/models/user.rb:32
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:32
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (0.4ms)
+Completed 200 OK in 250ms (Views: 6.6ms | ActiveRecord: 13.4ms)
+
+
+Started POST "/api/sessions" for ::1 at 2020-05-07 22:15:43 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"alex", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "alex"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:32
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "alex"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:32
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "dtNmpIeV4L_dClE3SumL6w"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:32
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "dtNmpIeV4L_dClE3SumL6w"], ["updated_at", "2020-05-08 05:15:43.376673"], ["id", 1]]
+  ↳ app/models/user.rb:32
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:32
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (0.4ms)
+Completed 200 OK in 223ms (Views: 5.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/api/bucket_list_items" for ::1 at 2020-05-07 22:15:48 -0700
+Processing by Api::BucketListItemsController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "dtNmpIeV4L_dClE3SumL6w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering api/bucket_list_items/index.json.jbuilder
+  [1m[36mBucketListItem Load (0.4ms)[0m  [1m[34mSELECT "bucket_list_items".* FROM "bucket_list_items" WHERE "bucket_list_items"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/api/bucket_list_items/index.json.jbuilder:1
+  Rendered api/bucket_list_items/index.json.jbuilder (16.4ms)
+Completed 200 OK in 41ms (Views: 19.4ms | ActiveRecord: 4.6ms)
+
+
