@@ -7,7 +7,8 @@ class BucketListIndex extends React.Component {
         this.state = {
             category: "",
             name: "",
-            url: ""
+            url: "",
+            filter: 'all'
         }
         this.logout = this.logout.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -33,6 +34,7 @@ class BucketListIndex extends React.Component {
         }
         this.props.addItem(item)
         this.setState({
+            category: "",
             name: "",
             url: ""
         })
@@ -52,7 +54,7 @@ class BucketListIndex extends React.Component {
                 <div>
                     <div className="header">
                         <h3>BUCKET LIST</h3>
-                        <h3 onClick={this.logout}>Logout</h3>
+                        <h3 id="logout-button" onClick={this.logout}>Logout</h3>
                     </div>
 
                     <div className="main-panel">
@@ -99,7 +101,27 @@ class BucketListIndex extends React.Component {
                         </div>
 
                         <div className="right-panel">
+                            <div className="filters">
+                                <h3
+                                    id={this.state.filter === 'all' ? 'selected-filter' : ""}
+                                    onClick={(e) => this.setState({filter: e.target.innerHTML.toLowerCase()})}
+                                >ALL</h3>
+                                <h3
+                                    id={this.state.filter === 'food' ? 'selected-filter' : ""}
+                                    onClick={(e) => this.setState({ filter: e.target.innerHTML.toLowerCase() })}
+                                >FOOD</h3>
+                                <h3
+                                    id={this.state.filter === 'travel' ? 'selected-filter' : ""}
+                                    onClick={(e) => this.setState({ filter: e.target.innerHTML.toLowerCase() })}
+                                >TRAVEL</h3>
+                                <h3
+                                    id={this.state.filter === 'activities' ? 'selected-filter' : ""}
+                                    onClick={(e) => this.setState({ filter: e.target.innerHTML.toLowerCase() })}
+                                >ACTIVITIES</h3>
+                            </div>
+                            <div>
                             {items.map(item => <IndexItem key={item.id} item={item} deleteItem={this.props.deleteItem} done={this.props.done}/>)}
+                            </div>
                         </div>
                     </div>
                 </div>

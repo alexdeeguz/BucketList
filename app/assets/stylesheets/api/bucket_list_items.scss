@@ -100,6 +100,7 @@ body {
     cursor: pointer;
     text-decoration-color: #ca7df9;
     color: gray;
+    transition: ease 0.5s;
 }
 
 .item-name:hover {
@@ -148,5 +149,37 @@ body {
 }
 .button:active {
 	position:relative;
+}
+
+#logout-button {
+    cursor: pointer;
+    transition: ease 0.5s;
+}
+
+#logout-button:hover {
+    color: #ca7df9;
+    transition: ease 0.5s;
+}
+
+.filters {
+    display: flex;
+    justify-content: space-around;
+}
+
+.filters > h3 {
+    color: #797979;
+    margin-top: 2%;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.filters > h3:hover {
+    color: #ca7df9;
+    cursor: pointer;
+}
+
+#selected-filter {
+    color: #ca7df9;
 }
 
