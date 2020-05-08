@@ -4,7 +4,6 @@ import { loginUser, removeErrors } from '../../actions/session_actions'
 
 
 const mSTP = state => ({
-    currentUser: state.entities.users[state.session.id],
     errors: state.errors,
     formType: 'login'
 })

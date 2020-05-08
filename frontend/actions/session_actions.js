@@ -31,7 +31,7 @@ export const signupUser = user => dispatch => SessionUtil.signup(user)
         error => dispatch(receiveErrors(error.responseJSON)))
 
 export const logoutUser = () => dispatch => SessionUtil.logout()
-    .then(() => dispatch(logoutCurrentUser))
+    .then(() => dispatch(logoutCurrentUser()))
 
 
 
