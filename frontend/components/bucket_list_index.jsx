@@ -1,4 +1,5 @@
 import React from 'react'
+import IndexItem from './bucket_list_index_item'
 
 class BucketListIndex extends React.Component {
     constructor(props) {
@@ -10,6 +11,10 @@ class BucketListIndex extends React.Component {
         }
         this.logout = this.logout.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+    }
+
+    componentDidMount() {
+        this.props.fetchItems()
     }
 
     logout() {
@@ -26,7 +31,11 @@ class BucketListIndex extends React.Component {
             completed: false,
             user_id: this.props.currentUser.id
         }
-        console.log(item)
+        this.props.addItem(item)
+        this.setState({
+            name: "",
+            url: ""
+        })
     }
 
     updateField(e, field) {
@@ -36,41 +45,46 @@ class BucketListIndex extends React.Component {
     }
 
     render() {
-        return (
-            <div>
+        if (this.props.bucketListItems) {
+            const items = this.props.bucketListItems
+            return (
                 <div>
-                    <h3 onClick={this.logout}>Logout</h3>
+                    <div className="header">
+                        <h3 onClick={this.logout}>Logout</h3>
+                    </div>
+
+                    <div className="main-panel">
+                        <div className="left-panel">
+                            <form className="form">
+                                <select onChange={(e) => this.updateField(e, 'category')}>
+                                    <option select="true">--Select a category--</option>
+                                    <option value="food">Food</option>
+                                    <option value="travel">Travel</option>
+                                    <option value="activity">Activity</option>
+                                </select>
+                                <input 
+                                    type="text" 
+                                    placeholder="Name/Title/Activity"
+                                    value={this.state.name}
+                                    onChange={(e) => this.updateField(e, 'name')}
+                                />
+                                <input 
+                                    type="text" 
+                                    placeholder="URL (optional)"
+                                    value={this.state.url}
+                                    onChange={(e) => this.updateField(e, 'url')}
+                                />
+                                <button onClick={this.handleSubmit}>Add</button>
+                            </form>
+                        </div>
+
+                        <div className="right-panel">
+                            {items.map(item => <IndexItem key={item.id} item={item} deleteItem={this.props.deleteItem}/>)}
+                        </div>
+                    </div>
                 </div>
-
-            
-                <form>
-                    <select onChange={(e) => this.updateField(e, 'category')}>
-                        <option select="true">--Select a category--</option>
-                        <option value="food">Food</option>
-                        <option value="travel">Travel</option>
-                        <option value="activity">Activity</option>
-                    </select>
-                    <input 
-                        type="text" 
-                        placeholder="Name/Title/Activity"
-                        value={this.state.name}
-                        onChange={(e) => this.updateField(e, 'name')}
-                    />
-                    <input 
-                        type="text" 
-                        placeholder="URL (optional)"
-                        value={this.state.url}
-                        onChange={(e) => this.updateField(e, 'url')}
-                    />
-                    <button onClick={this.handleSubmit}>Add</button>
-                </form>
-        
-
-                <div>
-
-                </div>
-            </div>
-        )
+            )
+        }
     }
 }
 

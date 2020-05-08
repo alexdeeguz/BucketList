@@ -1,3 +1,63 @@
 // Place all the styles related to the api/bucket_list_items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+    margin: 0;
+}
+
+
+.header {
+    width: 100vw;
+    height: 8vh;
+    border: 1px solid red;
+}
+
+.left-panel {
+    width: 20vw;
+    height: 92vh;
+    border: 1px solid lime;
+}
+
+.right-panel {
+    width: 80vw;
+    height: 92vh;
+    border: 1px solid blue;
+}
+
+.main-panel {
+    display: flex;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form > input {
+    text-align: center;
+}
+
+.bucket-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 20px;
+    padding-left: 10%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 10px;
+    font-size: 15pt;
+    border: 1px solid red;
+}
+
+.icon {
+    cursor: pointer;
+    width: 20px;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

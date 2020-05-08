@@ -1,4 +1,5 @@
 class Api::BucketListItemsController < ApplicationController
+    skip_before_action :verify_authenticity_token
 
     def index
         if !current_user
@@ -14,7 +15,7 @@ class Api::BucketListItemsController < ApplicationController
         if @bucket_list_item.save
             render :show
         else 
-            render json: @bucket_list_item.errors.full_messages
+            render json: @bucket_list_item.errors.full_messages, status: 422
         end
     end
 
@@ -28,7 +29,7 @@ class Api::BucketListItemsController < ApplicationController
         if @bucket_list_item.update(bucket_list_item_params)
             render :show
         else 
-            render json: @bucket_list_item.errors.full_messages
+            render json: @bucket_list_item.errors.full_messages, status: 422
         end
     end
 

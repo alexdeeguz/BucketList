@@ -12,3 +12,10 @@ export const createItem = bucket_list_item => (
         data: { bucket_list_item }
     })
 )
+
+export const deleteItem = id => (
+    $.ajax({
+        method: 'DELETE',
+        url: `/api/bucket_list_items/${id}`
+    })
+)
