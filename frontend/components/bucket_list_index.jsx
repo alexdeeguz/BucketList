@@ -45,6 +45,7 @@ class BucketListIndex extends React.Component {
     }
 
     render() {
+        console.log(this.state)
         if (this.props.bucketListItems) {
             const items = this.props.bucketListItems
             return (
@@ -56,14 +57,31 @@ class BucketListIndex extends React.Component {
 
                     <div className="main-panel">
                         <div className="left-panel">
-                            <h2>You have 10 items in your bucket list.</h2>
+                        <h2>You have 10 items in your bucket list.</h2>
                             <form className="form">
-                                <select onChange={(e) => this.updateField(e, 'category')}>
+                                {/* <select onChange={(e) => this.updateField(e, 'category')}>
                                     <option select="true">--Select a category--</option>
                                     <option value="food">Food</option>
                                     <option value="travel">Travel</option>
                                     <option value="activity">Activity</option>
-                                </select>
+                                </select> */}
+                                <div className="buttons">
+                                    <p 
+                                        href="#" 
+                                        className={this.state.category === 'food' ? 'button selected' : 'button'}
+                                        onClick={(e) => this.setState({category: e.target.innerHTML.toLowerCase()})}
+                                    >Food</p>
+                                    <p 
+                                        href="#" 
+                                        className={this.state.category === 'travel' ? 'button selected' : 'button'}
+                                        onClick={(e) => this.setState({ category: e.target.innerHTML.toLowerCase() })}
+                                    >Travel</p>
+                                    <p 
+                                        href="#" 
+                                        className={this.state.category === 'activity' ? 'button selected' : 'button'}
+                                        onClick={(e) => this.setState({ category: e.target.innerHTML.toLowerCase() })}
+                                    >Activity</p>
+                                </div>
                                 <input 
                                     type="text" 
                                     placeholder="Name/Title/Activity"

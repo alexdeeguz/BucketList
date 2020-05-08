@@ -11,6 +11,7 @@ const App = () => (
             <Route path='/login' component={LoginContainer} />
             <AuthRoute path='/signup' component={SignupContainer} />
             <ProtectedRoute path='/bucket-list' component={BucketListIndexContainer} />
+            <ProtectedRoute path='/' component={BucketListIndexContainer} />
         </Switch>
     </div>
 )
