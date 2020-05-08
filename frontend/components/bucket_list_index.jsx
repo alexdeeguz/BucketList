@@ -55,6 +55,7 @@ class BucketListIndex extends React.Component {
 
                     <div className="main-panel">
                         <div className="left-panel">
+                            <h2>You have 10 items in your bucket list.</h2>
                             <form className="form">
                                 <select onChange={(e) => this.updateField(e, 'category')}>
                                     <option select="true">--Select a category--</option>

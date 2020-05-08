@@ -25,7 +25,7 @@ class BucketListIndexItem extends React.Component {
         return (
             <div className="bucket-list-item">
                 <h3 
-                    className={this.props.item.completed ? "completed" : ""}
+                    className={this.props.item.completed ? "completed" : "item-name"}
                     onClick={this.updateItem}
                 >{name}</h3>
                 <div className="icons">

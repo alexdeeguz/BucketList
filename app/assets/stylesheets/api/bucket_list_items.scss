@@ -9,24 +9,57 @@ body {
 
 .header {
     width: 100vw;
-    height: 8vh;
-    border: 1px solid red;
+    height: 10vh;
+    border: 1px solid black;
+    color: white;
+    background-color: black;
 }
 
 .left-panel {
-    width: 20vw;
-    height: 92vh;
-    border: 1px solid lime;
+    width: 18vw;
+    height: 90vh;
+    color: #797979;
+    background-color: black;
 }
 
+.left-panel > form > button {
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px 10px;
+}
+
+.form {
+    margin-top: 70%;
+}
+
+.form input::placeholder {
+    color: #797979;
+}
+
+.form > input {
+    padding: 15px;
+    font-size: 14pt;
+    background-color: black;
+    margin-left: 10%;
+    margin-right: 10%;
+    border: none;
+    border-bottom: 3px solid #ca7df9;
+    outline: none;
+}
+
+
 .right-panel {
-    width: 80vw;
-    height: 92vh;
-    border: 1px solid blue;
+    width: 82vw;
+    height: 90vh;
+    background-color: #1a1919;
+    color: #fff8dc;
 }
 
 .main-panel {
     display: flex;
+    border-top: 2px solid #ca7df9;
+    border-right: 2px solid #ca7df9;
 }
 
 .form {
@@ -36,6 +69,7 @@ body {
 
 .form > input {
     text-align: center;
+    color: #ca7df9;
 }
 
 .bucket-list-item {
@@ -48,11 +82,18 @@ body {
     margin-right: 2%;
     margin-top: 10px;
     font-size: 15pt;
-    border: 1px solid red;
+    // border: 1px solid red;
+    border-bottom: 0.5px solid #fff8dc;
 }
 
 .completed {
     text-decoration: line-through;
+    cursor: pointer;
+}
+
+.item-name:hover {
+    text-decoration: line-through;
+    cursor: pointer;
 }
 
 .icon {
