@@ -51,6 +51,10 @@ body {
     border: 1px solid red;
 }
 
+.completed {
+    text-decoration: line-through;
+}
+
 .icon {
     cursor: pointer;
     width: 20px;
@@ -61,3 +65,4 @@ body {
     justify-content: center;
     align-items: center;
 }
+

@@ -79,7 +79,7 @@ class BucketListIndex extends React.Component {
                         </div>
 
                         <div className="right-panel">
-                            {items.map(item => <IndexItem key={item.id} item={item} deleteItem={this.props.deleteItem}/>)}
+                            {items.map(item => <IndexItem key={item.id} item={item} deleteItem={this.props.deleteItem} done={this.props.done}/>)}
                         </div>
                     </div>
                 </div>

@@ -19,3 +19,11 @@ export const deleteItem = id => (
         url: `/api/bucket_list_items/${id}`
     })
 )
+
+export const updateItem = (id, bucket_list_item) => (
+    $.ajax({
+        method: "PATCH",
+        url: `/api/bucket_list_items/${id}`,
+        data: { bucket_list_item }
+    })
+)
