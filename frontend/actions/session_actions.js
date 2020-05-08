@@ -24,8 +24,11 @@ export const removeErrors = () => ({
 
 export const loginUser = user => dispatch => SessionUtil.login(user)
     .then(user => dispatch(receiveCurrentUser(user)), 
-        error => dispatch(receiveErrors(error.responseJSON))
-    )
+        error => dispatch(receiveErrors(error.responseJSON)))
+
+export const signupUser = user => dispatch => SessionUtil.signup(user)
+    .then(user => dispatch(receiveCurrentUser(user)),
+        error => dispatch(receiveErrors(error.responseJSON)))
 
 export const logoutUser = () => dispatch => SessionUtil.logout()
     .then(() => dispatch(logoutCurrentUser))

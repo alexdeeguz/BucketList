@@ -4,12 +4,13 @@ import { loginUser, removeErrors } from '../../actions/session_actions'
 
 
 const mSTP = state => ({
+    currentUser: state.entities.users[state.session.id],
     errors: state.errors,
     formType: 'login'
 })
 
 const mDTP = dispatch => ({
-    login: user => dispatch(loginUser(user)),
+    action: user => dispatch(loginUser(user)),
     removeErrors: () => dispatch(removeErrors())
 })
 
