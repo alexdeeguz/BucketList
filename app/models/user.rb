@@ -42,6 +42,8 @@ class User < ApplicationRecord
         BCrypt::Password.new(self.password_digest).is_password?(password)
     end
 
-
+    has_many :bucket_list_items,
+        foreign_key: :user_id,
+        class_name: :BucketListItem
     
 end
