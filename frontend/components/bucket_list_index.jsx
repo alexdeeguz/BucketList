@@ -50,6 +50,7 @@ class BucketListIndex extends React.Component {
             return (
                 <div>
                     <div className="header">
+                        <h3>BUCKET LIST</h3>
                         <h3 onClick={this.logout}>Logout</h3>
                     </div>
 

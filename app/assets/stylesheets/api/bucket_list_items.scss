@@ -8,12 +8,21 @@ body {
 
 
 .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100vw;
     height: 10vh;
     border: 1px solid black;
     color: white;
     background-color: black;
 }
+
+.header > h3 {
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
 
 .left-panel {
     width: 18vw;
@@ -89,6 +98,8 @@ body {
 .completed {
     text-decoration: line-through;
     cursor: pointer;
+    text-decoration-color: #ca7df9;
+    color: gray;
 }
 
 .item-name:hover {
