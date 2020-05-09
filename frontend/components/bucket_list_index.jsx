@@ -66,7 +66,7 @@ class BucketListIndex extends React.Component {
                         <div className="left-panel">
                         { this.state.filter === "all" ?
                                 <h2>You have <span className="number">{items.length}</span> {items.length === 1 ? "item" : "items"} in your bucket list.</h2> : 
-                                <h2>You have <span className="number">{items.length}</span> {items.length === 1 ? "item" : "items"} in your {items.length ? items[0].category : ""} bucket list.</h2>
+                                <h2>You have <span className="number">{items.length}</span> {items.length === 1 ? "item" : "items"} in your {this.state.filter} bucket list.</h2>
                         }
                             <form className="form">
                                 <div className="buttons">
