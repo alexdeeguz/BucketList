@@ -21,6 +21,7 @@ body {
 .header > h3 {
     padding-left: 2%;
     padding-right: 2%;
+    border: 1px solid black;
 }
 
 
@@ -36,6 +37,14 @@ body {
     margin-left: auto;
     margin-right: auto;
     padding: 5px 10px;
+}
+
+.left-panel > h2 {
+    margin-left: 5%;
+}
+
+.number {
+    color: #ca7df9;
 }
 
 .form {
@@ -81,6 +90,29 @@ body {
     color: #ca7df9;
 }
 
+#add-button {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    cursor: pointer;
+    // width: 50px;
+    border: 1px solid #ca7df9;
+    box-shadow: -2px 3px #ca7df9;
+    color: #ca7df9;
+    border-radius: 10px;
+    transition: ease 0.5s;
+}
+
+#add-button:hover {
+    background-color: #ca7df9;
+    // border: 1px solid #ca7df9;
+    // box-shadow: -2px 3px black;
+    color: white;
+    width: 20%;
+    transition: ease 0.5s;
+}
+
 .bucket-list-item {
     display: flex;
     justify-content: space-between;
@@ -110,13 +142,16 @@ body {
 
 .icon {
     cursor: pointer;
+    margin-left: 15px;
     width: 20px;
 }
 
 .icons {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+    width: 10%;
     align-items: center;
+    // border: 1px solid red;
 }
 
 

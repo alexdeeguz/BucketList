@@ -4,13 +4,18 @@ class BucketListIndexItem extends React.Component {
     constructor(props) {
         super(props)
         this.handleMouseover = this.handleMouseover.bind(this)
+        this.handleMouseout = this.handleMouseout.bind(this)
         this.updateItem = this.updateItem.bind(this)
     }
 
     handleMouseover(e) {
-        e.target.src === window.deleteURL2 ? 
-            e.target.src = window.deleteURL1 :
-            e.target.src = window.deleteURL2 
+        if (e.target.src === window.deleteURL1) e.target.src = window.deleteURL2
+        if (e.target.src === window.infoURL1) e.target.src = window.infoURL2
+    }
+
+    handleMouseout(e) {
+        if (e.target.src === window.deleteURL2) e.target.src = window.deleteURL1
+        if (e.target.src === window.infoURL2) e.target.src = window.infoURL1
     }
 
     updateItem() {
@@ -29,11 +34,20 @@ class BucketListIndexItem extends React.Component {
                     onClick={this.updateItem}
                 >{name}</h3>
                 <div className="icons">
+                    {this.props.item.url ? 
+                    <a href={this.props.item.url} target="_blank"><img 
+                        className="icon"
+                        src={window.infoURL1}
+                        onMouseOver={this.handleMouseover}
+                        onMouseOut={this.handleMouseout}
+
+                    />
+                    </a> : "" }
                     <img 
                         className="icon" 
                         src={window.deleteURL1} 
                         onMouseOver={this.handleMouseover} 
-                        onMouseOut={this.handleMouseover} 
+                        onMouseOut={this.handleMouseout} 
                         onClick={() => this.props.deleteItem(this.props.item.id)}
                     />
                 </div>

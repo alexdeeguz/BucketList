@@ -8,7 +8,7 @@ class BucketListIndex extends React.Component {
             category: "",
             name: "",
             url: "",
-            filter: 'all'
+            filter: 'food'
         }
         this.logout = this.logout.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -47,9 +47,14 @@ class BucketListIndex extends React.Component {
     }
 
     render() {
-        console.log(this.state)
+        let items;
         if (this.props.bucketListItems) {
-            const items = this.props.bucketListItems
+            if (this.state.filter === 'all') {
+                items = this.props.bucketListItems
+            } else {
+            items = this.props.bucketListItems
+            items = items.filter(item => item.category === this.state.filter)
+            }
             return (
                 <div>
                     <div className="header">
@@ -59,14 +64,11 @@ class BucketListIndex extends React.Component {
 
                     <div className="main-panel">
                         <div className="left-panel">
-                        <h2>You have 10 items in your bucket list.</h2>
+                        { this.state.filter === "all" ?
+                                <h2>You have <span className="number">{items.length}</span> {items.length === 1 ? "item" : "items"} in your bucket list.</h2> : 
+                                <h2>You have <span className="number">{items.length}</span> {items.length === 1 ? "item" : "items"} in your {items.length ? items[0].category : ""} bucket list.</h2>
+                        }
                             <form className="form">
-                                {/* <select onChange={(e) => this.updateField(e, 'category')}>
-                                    <option select="true">--Select a category--</option>
-                                    <option value="food">Food</option>
-                                    <option value="travel">Travel</option>
-                                    <option value="activity">Activity</option>
-                                </select> */}
                                 <div className="buttons">
                                     <p 
                                         href="#" 
@@ -96,7 +98,8 @@ class BucketListIndex extends React.Component {
                                     value={this.state.url}
                                     onChange={(e) => this.updateField(e, 'url')}
                                 />
-                                <button onClick={this.handleSubmit}>Add</button>
+                                <h1 id="add-button" onClick={this.handleSubmit}>+</h1>
+                                
                             </form>
                         </div>
 
@@ -115,8 +118,8 @@ class BucketListIndex extends React.Component {
                                     onClick={(e) => this.setState({ filter: e.target.innerHTML.toLowerCase() })}
                                 >TRAVEL</h3>
                                 <h3
-                                    id={this.state.filter === 'activities' ? 'selected-filter' : ""}
-                                    onClick={(e) => this.setState({ filter: e.target.innerHTML.toLowerCase() })}
+                                    id={this.state.filter === 'activity' ? 'selected-filter' : ""}
+                                    onClick={(e) => this.setState({ filter: 'activity' })}
                                 >ACTIVITIES</h3>
                             </div>
                             <div>
