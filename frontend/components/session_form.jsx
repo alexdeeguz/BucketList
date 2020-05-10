@@ -34,6 +34,9 @@ class SessionForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault()
+        if (this.props.formType === 'sign up') {
+            if (this.state.password.length < 6 || !this.uppercase() || !this.specialChar() || !this.usernameAvailable()) return
+        }
         this.props.action(this.state)
             .then(() => this.props.history.push('bucket-list'))
     }
