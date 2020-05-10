@@ -38,6 +38,7 @@ class BucketListIndex extends React.Component {
             name: "",
             url: ""
         })
+        this.props.removeErrors()
     }
 
     updateField(e, field) {
@@ -47,6 +48,7 @@ class BucketListIndex extends React.Component {
     }
 
     render() {
+        const errors = this.props.errors ? this.props.errors : ""
         let items;
         if (this.props.bucketListItems) {
             if (this.state.filter === 'all') {
@@ -99,7 +101,7 @@ class BucketListIndex extends React.Component {
                                     onChange={(e) => this.updateField(e, 'url')}
                                 />
                                 <h1 id="add-button" onClick={this.handleSubmit}>+</h1>
-                                
+                                <p id="errors">{errors.join(".")}</p>
                             </form>
                         </div>
 

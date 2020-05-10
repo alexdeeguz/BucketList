@@ -38,7 +38,7 @@ class SessionForm extends React.Component {
             if (this.state.password.length < 6 || !this.uppercase() || !this.specialChar() || !this.usernameAvailable()) return
         }
         this.props.action(this.state)
-            .then(() => this.props.history.push('bucket-list'))
+            .then(() => this.props.history.push('/bucket-list'))
     }
 
     uppercase() {
