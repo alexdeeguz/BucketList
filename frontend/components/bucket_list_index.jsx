@@ -16,6 +16,7 @@ class BucketListIndex extends React.Component {
 
     componentDidMount() {
         this.props.fetchItems()
+        this.props.removeErrors()
     }
 
     logout() {
