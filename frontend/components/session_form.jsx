@@ -6,7 +6,8 @@ class SessionForm extends React.Component {
         super(props)
         this.state = {
             username: "",
-            password: ""
+            password: "",
+            passwordConfirm: ""
         }
 
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -45,10 +46,14 @@ class SessionForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault()
+        const user = {
+            username: this.state.username,
+            password: this.state.password
+        }
         if (this.props.formType === 'sign up') {
             if (this.state.password.length < 6 || !this.uppercase() || !this.specialChar() || !this.usernameAvailable()) return
         }
-        this.props.action(this.state)
+        this.props.action(user)
             .then(() => this.props.history.push('/bucket-list'))
     }
 
@@ -66,6 +71,10 @@ class SessionForm extends React.Component {
             if (specialChars.includes(this.state.password[i])) return true
         }
         return false
+    }
+
+    passwordMatch() {
+        return this.state.password === this.state.passwordConfirm
     }
 
     render() {
@@ -109,6 +118,12 @@ class SessionForm extends React.Component {
                             value={this.state.password}
                             onChange={(e) => this.updateField(e, 'password')}
                         /><br />
+                        <input
+                            type="password"
+                            placeholder="Confirm password"
+                            value={this.state.passwordConfirm}
+                            onChange={(e) => this.updateField(e, 'passwordConfirm')}
+                        /><br />
 
                         <h3 onClick={this.handleSubmit}>{this.props.formType.toUpperCase()}</h3>
                         <Link id="link" to='/login'><h3>Back</h3></Link>
@@ -118,6 +133,7 @@ class SessionForm extends React.Component {
                             <span className={this.state.password.length >= 6 ? "good" : "bad"}>Password must be at least 6 characters.</span>
                             <span className={this.uppercase() ? "good" : "bad"}>Password must have at least one uppercase letter.</span>
                             <span className={this.specialChar() ? "good" : "bad"}>Password must have at least one special character.</span>
+                            <span className={this.passwordMatch() && this.state.password.length > 0 ? "good" : "bad"}>Passwords must match.</span>
                         </div>
                 </div>
             )
