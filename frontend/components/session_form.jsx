@@ -13,12 +13,23 @@ class SessionForm extends React.Component {
         this.uppercase = this.uppercase.bind(this)
         this.specialChar = this.specialChar.bind(this)
         this.usernameAvailable = this.usernameAvailable.bind(this)
+        this.demoLogin = this.demoLogin.bind(this)
     }
 
     componentDidMount() {
         if (this.props.formType === 'sign up') {
             this.props.getAllUsers()
         }
+    }
+
+    demoLogin(e) {
+        e.preventDefault()
+        const user = {
+            username: "demo-user",
+            password: "!Password"
+        }
+        this.props.action(user)
+            .then(() => this.props.history.push('/bucket-list'))
     }
 
     usernameAvailable() {
@@ -76,6 +87,7 @@ class SessionForm extends React.Component {
                             onChange={(e) => this.updateField(e, 'password')}
                         /><br/>
                         <h3 onClick={this.handleSubmit}>{this.props.formType.toUpperCase()}</h3>
+                        <h3 onClick={this.demoLogin}>DEMO LOGIN</h3>
                         <Link id="link" to='/signup'><h3>Register</h3></Link>
                     </form>
                         <p id="errors">{errors.join(" ")}</p>
