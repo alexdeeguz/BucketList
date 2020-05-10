@@ -8,7 +8,7 @@ class BucketListIndex extends React.Component {
             category: "",
             name: "",
             url: "",
-            filter: 'food'
+            filter: 'all'
         }
         this.logout = this.logout.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)

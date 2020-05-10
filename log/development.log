@@ -44887,3 +44887,12 @@ Processing by Api::UsersController#index as JSON
 Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/api/users" for ::1 at 2020-05-09 18:12:29 -0700
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:1
+  Rendered api/users/index.json.jbuilder (1.4ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.3ms)
+
+
