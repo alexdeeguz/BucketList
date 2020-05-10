@@ -59716,3 +59716,580 @@ Processing by Api::BucketListItemsController#update as JSON
 Completed 200 OK in 10ms (Views: 6.2ms | ActiveRecord: 0.7ms)
 
 
+Started PATCH "/api/bucket_list_items/9" for ::1 at 2020-05-10 15:23:38 -0700
+Processing by Api::BucketListItemsController#update as JSON
+  Parameters: {"bucket_list_item"=>{"name"=>"bungee jump", "url"=>"dsf"}, "id"=>"9"}
+  [1m[36mBucketListItem Load (0.3ms)[0m  [1m[34mSELECT  "bucket_list_items".* FROM "bucket_list_items" WHERE "bucket_list_items"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:28
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[36mBucketListItem Update (0.5ms)[0m  [1m[33mUPDATE "bucket_list_items" SET "name" = $1, "updated_at" = $2 WHERE "bucket_list_items"."id" = $3[0m  [["name", "bungee jump"], ["updated_at", "2020-05-10 22:23:38.216517"], ["id", 9]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  Rendering api/bucket_list_items/show.json.jbuilder
+  Rendered api/bucket_list_items/show.json.jbuilder (0.4ms)
+Completed 200 OK in 13ms (Views: 6.5ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/api/bucket_list_items" for ::1 at 2020-05-10 15:24:34 -0700
+Processing by Api::BucketListItemsController#create as JSON
+  Parameters: {"bucket_list_item"=>{"category"=>"", "name"=>"nevis swing in new zealand", "url"=>"adsf", "completed"=>"false", "user_id"=>"1"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/bucket_list_items_controller.rb:15
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:15
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/bucket_list_items_controller.rb:15
+Completed 422 Unprocessable Entity in 4ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/bucket_list_items" for ::1 at 2020-05-10 15:24:47 -0700
+Processing by Api::BucketListItemsController#create as JSON
+  Parameters: {"bucket_list_item"=>{"category"=>"activity", "name"=>"nevis swing in new zealand", "url"=>"asdf", "completed"=>"false", "user_id"=>"1"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/bucket_list_items_controller.rb:15
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:15
+  [1m[36mBucketListItem Create (0.3ms)[0m  [1m[32mINSERT INTO "bucket_list_items" ("category", "name", "url", "completed", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["category", "activity"], ["name", "nevis swing in new zealand"], ["url", "asdf"], ["completed", false], ["created_at", "2020-05-10 22:24:47.945502"], ["updated_at", "2020-05-10 22:24:47.945502"], ["user_id", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:15
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/bucket_list_items_controller.rb:15
+  Rendering api/bucket_list_items/show.json.jbuilder
+  Rendered api/bucket_list_items/show.json.jbuilder (0.4ms)
+Completed 200 OK in 11ms (Views: 6.7ms | ActiveRecord: 1.1ms)
+
+
+Started PATCH "/api/bucket_list_items/8" for ::1 at 2020-05-10 15:24:52 -0700
+Processing by Api::BucketListItemsController#update as JSON
+  Parameters: {"bucket_list_item"=>{"completed"=>"true"}, "id"=>"8"}
+  [1m[36mBucketListItem Load (0.2ms)[0m  [1m[34mSELECT  "bucket_list_items".* FROM "bucket_list_items" WHERE "bucket_list_items"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:28
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[36mBucketListItem Update (0.3ms)[0m  [1m[33mUPDATE "bucket_list_items" SET "completed" = $1, "updated_at" = $2 WHERE "bucket_list_items"."id" = $3[0m  [["completed", true], ["updated_at", "2020-05-10 22:24:52.227680"], ["id", 8]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  Rendering api/bucket_list_items/show.json.jbuilder
+  Rendered api/bucket_list_items/show.json.jbuilder (0.4ms)
+Completed 200 OK in 12ms (Views: 6.7ms | ActiveRecord: 1.4ms)
+
+
+Started PATCH "/api/bucket_list_items/8" for ::1 at 2020-05-10 15:25:10 -0700
+Processing by Api::BucketListItemsController#update as JSON
+  Parameters: {"bucket_list_item"=>{"completed"=>"false"}, "id"=>"8"}
+  [1m[36mBucketListItem Load (0.2ms)[0m  [1m[34mSELECT  "bucket_list_items".* FROM "bucket_list_items" WHERE "bucket_list_items"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:28
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[36mBucketListItem Update (0.4ms)[0m  [1m[33mUPDATE "bucket_list_items" SET "completed" = $1, "updated_at" = $2 WHERE "bucket_list_items"."id" = $3[0m  [["completed", false], ["updated_at", "2020-05-10 22:25:10.223738"], ["id", 8]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  Rendering api/bucket_list_items/show.json.jbuilder
+  Rendered api/bucket_list_items/show.json.jbuilder (0.3ms)
+Completed 200 OK in 11ms (Views: 6.1ms | ActiveRecord: 1.6ms)
+
+
+Started PATCH "/api/bucket_list_items/8" for ::1 at 2020-05-10 15:25:10 -0700
+Processing by Api::BucketListItemsController#update as JSON
+  Parameters: {"bucket_list_item"=>{"completed"=>"true"}, "id"=>"8"}
+  [1m[36mBucketListItem Load (0.3ms)[0m  [1m[34mSELECT  "bucket_list_items".* FROM "bucket_list_items" WHERE "bucket_list_items"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:28
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[36mBucketListItem Update (0.5ms)[0m  [1m[33mUPDATE "bucket_list_items" SET "completed" = $1, "updated_at" = $2 WHERE "bucket_list_items"."id" = $3[0m  [["completed", true], ["updated_at", "2020-05-10 22:25:10.836268"], ["id", 8]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  Rendering api/bucket_list_items/show.json.jbuilder
+  Rendered api/bucket_list_items/show.json.jbuilder (0.5ms)
+Completed 200 OK in 15ms (Views: 8.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 15:26:03 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ixTXIs-KwgZOQrjmeUcEOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+Completed 200 OK in 46ms (Views: 35.0ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/api/bucket_list_items" for ::1 at 2020-05-10 15:26:03 -0700
+Processing by Api::BucketListItemsController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ixTXIs-KwgZOQrjmeUcEOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering api/bucket_list_items/index.json.jbuilder
+  [1m[36mBucketListItem Load (0.8ms)[0m  [1m[34mSELECT "bucket_list_items".* FROM "bucket_list_items" WHERE "bucket_list_items"."user_id" = $1 ORDER BY completed[0m  [["user_id", 1]]
+  ↳ app/views/api/bucket_list_items/index.json.jbuilder:1
+  Rendered api/bucket_list_items/index.json.jbuilder (9.2ms)
+Completed 200 OK in 23ms (Views: 14.2ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 15:26:03 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ixTXIs-KwgZOQrjmeUcEOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+Completed 200 OK in 37ms (Views: 35.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/bucket_list_items" for ::1 at 2020-05-10 15:26:03 -0700
+Processing by Api::BucketListItemsController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ixTXIs-KwgZOQrjmeUcEOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering api/bucket_list_items/index.json.jbuilder
+  [1m[36mBucketListItem Load (0.4ms)[0m  [1m[34mSELECT "bucket_list_items".* FROM "bucket_list_items" WHERE "bucket_list_items"."user_id" = $1 ORDER BY completed[0m  [["user_id", 1]]
+  ↳ app/views/api/bucket_list_items/index.json.jbuilder:1
+  Rendered api/bucket_list_items/index.json.jbuilder (8.0ms)
+Completed 200 OK in 17ms (Views: 14.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 15:26:04 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ixTXIs-KwgZOQrjmeUcEOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+Completed 200 OK in 35ms (Views: 34.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/bucket_list_items" for ::1 at 2020-05-10 15:26:04 -0700
+Processing by Api::BucketListItemsController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ixTXIs-KwgZOQrjmeUcEOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering api/bucket_list_items/index.json.jbuilder
+  [1m[36mBucketListItem Load (0.5ms)[0m  [1m[34mSELECT "bucket_list_items".* FROM "bucket_list_items" WHERE "bucket_list_items"."user_id" = $1 ORDER BY completed[0m  [["user_id", 1]]
+  ↳ app/views/api/bucket_list_items/index.json.jbuilder:1
+  Rendered api/bucket_list_items/index.json.jbuilder (1.9ms)
+Completed 200 OK in 10ms (Views: 7.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 15:26:04 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ixTXIs-KwgZOQrjmeUcEOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+Completed 200 OK in 33ms (Views: 32.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/bucket_list_items" for ::1 at 2020-05-10 15:26:05 -0700
+Processing by Api::BucketListItemsController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ixTXIs-KwgZOQrjmeUcEOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering api/bucket_list_items/index.json.jbuilder
+  [1m[36mBucketListItem Load (0.4ms)[0m  [1m[34mSELECT "bucket_list_items".* FROM "bucket_list_items" WHERE "bucket_list_items"."user_id" = $1 ORDER BY completed[0m  [["user_id", 1]]
+  ↳ app/views/api/bucket_list_items/index.json.jbuilder:1
+  Rendered api/bucket_list_items/index.json.jbuilder (1.8ms)
+Completed 200 OK in 10ms (Views: 7.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 15:26:14 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ixTXIs-KwgZOQrjmeUcEOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+Completed 200 OK in 38ms (Views: 33.0ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/api/bucket_list_items" for ::1 at 2020-05-10 15:26:14 -0700
+Processing by Api::BucketListItemsController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ixTXIs-KwgZOQrjmeUcEOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mBucketListItem Load (0.4ms)[0m  [1m[34mSELECT "bucket_list_items".* FROM "bucket_list_items" WHERE "bucket_list_items"."user_id" = $1 ORDER BY completed[0m  [["user_id", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:8
+  Rendering api/bucket_list_items/index.json.jbuilder
+  Rendered api/bucket_list_items/index.json.jbuilder (0.7ms)
+Completed 200 OK in 28ms (Views: 10.5ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 15:26:15 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ixTXIs-KwgZOQrjmeUcEOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+Completed 200 OK in 32ms (Views: 30.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/bucket_list_items" for ::1 at 2020-05-10 15:26:15 -0700
+Processing by Api::BucketListItemsController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ixTXIs-KwgZOQrjmeUcEOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mBucketListItem Load (0.4ms)[0m  [1m[34mSELECT "bucket_list_items".* FROM "bucket_list_items" WHERE "bucket_list_items"."user_id" = $1 ORDER BY completed[0m  [["user_id", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:8
+  Rendering api/bucket_list_items/index.json.jbuilder
+  Rendered api/bucket_list_items/index.json.jbuilder (1.0ms)
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 15:26:15 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ixTXIs-KwgZOQrjmeUcEOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+Completed 200 OK in 33ms (Views: 31.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/bucket_list_items" for ::1 at 2020-05-10 15:26:15 -0700
+Processing by Api::BucketListItemsController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ixTXIs-KwgZOQrjmeUcEOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mBucketListItem Load (0.4ms)[0m  [1m[34mSELECT "bucket_list_items".* FROM "bucket_list_items" WHERE "bucket_list_items"."user_id" = $1 ORDER BY completed[0m  [["user_id", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:8
+  Rendering api/bucket_list_items/index.json.jbuilder
+  Rendered api/bucket_list_items/index.json.jbuilder (0.7ms)
+Completed 200 OK in 10ms (Views: 7.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 15:26:16 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ixTXIs-KwgZOQrjmeUcEOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+Completed 200 OK in 32ms (Views: 31.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/bucket_list_items" for ::1 at 2020-05-10 15:26:16 -0700
+Processing by Api::BucketListItemsController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ixTXIs-KwgZOQrjmeUcEOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mBucketListItem Load (0.4ms)[0m  [1m[34mSELECT "bucket_list_items".* FROM "bucket_list_items" WHERE "bucket_list_items"."user_id" = $1 ORDER BY completed[0m  [["user_id", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:8
+  Rendering api/bucket_list_items/index.json.jbuilder
+  Rendered api/bucket_list_items/index.json.jbuilder (0.6ms)
+Completed 200 OK in 9ms (Views: 6.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 15:27:12 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ixTXIs-KwgZOQrjmeUcEOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+Completed 200 OK in 302ms (Views: 296.4ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/api/bucket_list_items" for ::1 at 2020-05-10 15:27:13 -0700
+Processing by Api::BucketListItemsController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ixTXIs-KwgZOQrjmeUcEOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering api/bucket_list_items/index.json.jbuilder
+  [1m[36mBucketListItem Load (0.3ms)[0m  [1m[34mSELECT "bucket_list_items".* FROM "bucket_list_items" WHERE "bucket_list_items"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/api/bucket_list_items/index.json.jbuilder:1
+  Rendered api/bucket_list_items/index.json.jbuilder (15.5ms)
+Completed 200 OK in 26ms (Views: 17.5ms | ActiveRecord: 4.6ms)
+
+
+Started PATCH "/api/bucket_list_items/9" for ::1 at 2020-05-10 15:27:14 -0700
+Processing by Api::BucketListItemsController#update as JSON
+  Parameters: {"bucket_list_item"=>{"completed"=>"true"}, "id"=>"9"}
+  [1m[36mBucketListItem Load (0.3ms)[0m  [1m[34mSELECT  "bucket_list_items".* FROM "bucket_list_items" WHERE "bucket_list_items"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:28
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[36mBucketListItem Update (0.4ms)[0m  [1m[33mUPDATE "bucket_list_items" SET "completed" = $1, "updated_at" = $2 WHERE "bucket_list_items"."id" = $3[0m  [["completed", true], ["updated_at", "2020-05-10 22:27:14.572294"], ["id", 9]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  Rendering api/bucket_list_items/show.json.jbuilder
+  Rendered api/bucket_list_items/show.json.jbuilder (0.4ms)
+Completed 200 OK in 15ms (Views: 6.8ms | ActiveRecord: 1.7ms)
+
+
+Started PATCH "/api/bucket_list_items/10" for ::1 at 2020-05-10 15:27:15 -0700
+Processing by Api::BucketListItemsController#update as JSON
+  Parameters: {"bucket_list_item"=>{"completed"=>"true"}, "id"=>"10"}
+  [1m[36mBucketListItem Load (0.2ms)[0m  [1m[34mSELECT  "bucket_list_items".* FROM "bucket_list_items" WHERE "bucket_list_items"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:28
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[36mBucketListItem Update (0.3ms)[0m  [1m[33mUPDATE "bucket_list_items" SET "completed" = $1, "updated_at" = $2 WHERE "bucket_list_items"."id" = $3[0m  [["completed", true], ["updated_at", "2020-05-10 22:27:15.567000"], ["id", 10]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  Rendering api/bucket_list_items/show.json.jbuilder
+  Rendered api/bucket_list_items/show.json.jbuilder (0.4ms)
+Completed 200 OK in 12ms (Views: 6.6ms | ActiveRecord: 1.4ms)
+
+
+Started PATCH "/api/bucket_list_items/8" for ::1 at 2020-05-10 15:27:16 -0700
+Processing by Api::BucketListItemsController#update as JSON
+  Parameters: {"bucket_list_item"=>{"completed"=>"false"}, "id"=>"8"}
+  [1m[36mBucketListItem Load (0.3ms)[0m  [1m[34mSELECT  "bucket_list_items".* FROM "bucket_list_items" WHERE "bucket_list_items"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:28
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[36mBucketListItem Update (0.4ms)[0m  [1m[33mUPDATE "bucket_list_items" SET "completed" = $1, "updated_at" = $2 WHERE "bucket_list_items"."id" = $3[0m  [["completed", false], ["updated_at", "2020-05-10 22:27:16.621501"], ["id", 8]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  Rendering api/bucket_list_items/show.json.jbuilder
+  Rendered api/bucket_list_items/show.json.jbuilder (0.4ms)
+Completed 200 OK in 13ms (Views: 7.6ms | ActiveRecord: 1.6ms)
+
+
+Started PATCH "/api/bucket_list_items/9" for ::1 at 2020-05-10 15:27:17 -0700
+Processing by Api::BucketListItemsController#update as JSON
+  Parameters: {"bucket_list_item"=>{"completed"=>"false"}, "id"=>"9"}
+  [1m[36mBucketListItem Load (0.2ms)[0m  [1m[34mSELECT  "bucket_list_items".* FROM "bucket_list_items" WHERE "bucket_list_items"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:28
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[36mBucketListItem Update (0.4ms)[0m  [1m[33mUPDATE "bucket_list_items" SET "completed" = $1, "updated_at" = $2 WHERE "bucket_list_items"."id" = $3[0m  [["completed", false], ["updated_at", "2020-05-10 22:27:17.196132"], ["id", 9]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  Rendering api/bucket_list_items/show.json.jbuilder
+  Rendered api/bucket_list_items/show.json.jbuilder (0.5ms)
+Completed 200 OK in 12ms (Views: 7.1ms | ActiveRecord: 1.5ms)
+
+
+Started PATCH "/api/bucket_list_items/10" for ::1 at 2020-05-10 15:27:17 -0700
+Processing by Api::BucketListItemsController#update as JSON
+  Parameters: {"bucket_list_item"=>{"completed"=>"false"}, "id"=>"10"}
+  [1m[36mBucketListItem Load (0.3ms)[0m  [1m[34mSELECT  "bucket_list_items".* FROM "bucket_list_items" WHERE "bucket_list_items"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:28
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[36mBucketListItem Update (0.3ms)[0m  [1m[33mUPDATE "bucket_list_items" SET "completed" = $1, "updated_at" = $2 WHERE "bucket_list_items"."id" = $3[0m  [["completed", false], ["updated_at", "2020-05-10 22:27:17.695721"], ["id", 10]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  Rendering api/bucket_list_items/show.json.jbuilder
+  Rendered api/bucket_list_items/show.json.jbuilder (0.7ms)
+Completed 200 OK in 12ms (Views: 7.2ms | ActiveRecord: 1.5ms)
+
+
+Started PATCH "/api/bucket_list_items/9" for ::1 at 2020-05-10 15:27:19 -0700
+Processing by Api::BucketListItemsController#update as JSON
+  Parameters: {"bucket_list_item"=>{"completed"=>"true"}, "id"=>"9"}
+  [1m[36mBucketListItem Load (0.3ms)[0m  [1m[34mSELECT  "bucket_list_items".* FROM "bucket_list_items" WHERE "bucket_list_items"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:28
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[36mBucketListItem Update (0.3ms)[0m  [1m[33mUPDATE "bucket_list_items" SET "completed" = $1, "updated_at" = $2 WHERE "bucket_list_items"."id" = $3[0m  [["completed", true], ["updated_at", "2020-05-10 22:27:19.497045"], ["id", 9]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  Rendering api/bucket_list_items/show.json.jbuilder
+  Rendered api/bucket_list_items/show.json.jbuilder (0.4ms)
+Completed 200 OK in 12ms (Views: 7.2ms | ActiveRecord: 1.5ms)
+
+
+Started PATCH "/api/bucket_list_items/9" for ::1 at 2020-05-10 15:27:20 -0700
+Processing by Api::BucketListItemsController#update as JSON
+  Parameters: {"bucket_list_item"=>{"completed"=>"false"}, "id"=>"9"}
+  [1m[36mBucketListItem Load (0.3ms)[0m  [1m[34mSELECT  "bucket_list_items".* FROM "bucket_list_items" WHERE "bucket_list_items"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:28
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[36mBucketListItem Update (0.4ms)[0m  [1m[33mUPDATE "bucket_list_items" SET "completed" = $1, "updated_at" = $2 WHERE "bucket_list_items"."id" = $3[0m  [["completed", false], ["updated_at", "2020-05-10 22:27:20.356922"], ["id", 9]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  Rendering api/bucket_list_items/show.json.jbuilder
+  Rendered api/bucket_list_items/show.json.jbuilder (0.4ms)
+Completed 200 OK in 13ms (Views: 7.1ms | ActiveRecord: 1.8ms)
+
+
+Started PATCH "/api/bucket_list_items/9" for ::1 at 2020-05-10 15:27:21 -0700
+Processing by Api::BucketListItemsController#update as JSON
+  Parameters: {"bucket_list_item"=>{"completed"=>"true"}, "id"=>"9"}
+  [1m[36mBucketListItem Load (0.2ms)[0m  [1m[34mSELECT  "bucket_list_items".* FROM "bucket_list_items" WHERE "bucket_list_items"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:28
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[36mBucketListItem Update (0.3ms)[0m  [1m[33mUPDATE "bucket_list_items" SET "completed" = $1, "updated_at" = $2 WHERE "bucket_list_items"."id" = $3[0m  [["completed", true], ["updated_at", "2020-05-10 22:27:21.700551"], ["id", 9]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  Rendering api/bucket_list_items/show.json.jbuilder
+  Rendered api/bucket_list_items/show.json.jbuilder (0.5ms)
+Completed 200 OK in 12ms (Views: 7.4ms | ActiveRecord: 1.3ms)
+
+
+Started PATCH "/api/bucket_list_items/9" for ::1 at 2020-05-10 15:27:22 -0700
+Processing by Api::BucketListItemsController#update as JSON
+  Parameters: {"bucket_list_item"=>{"completed"=>"false"}, "id"=>"9"}
+  [1m[36mBucketListItem Load (0.3ms)[0m  [1m[34mSELECT  "bucket_list_items".* FROM "bucket_list_items" WHERE "bucket_list_items"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:28
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[36mBucketListItem Update (0.5ms)[0m  [1m[33mUPDATE "bucket_list_items" SET "completed" = $1, "updated_at" = $2 WHERE "bucket_list_items"."id" = $3[0m  [["completed", false], ["updated_at", "2020-05-10 22:27:22.647325"], ["id", 9]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  Rendering api/bucket_list_items/show.json.jbuilder
+  Rendered api/bucket_list_items/show.json.jbuilder (0.4ms)
+Completed 200 OK in 13ms (Views: 6.8ms | ActiveRecord: 1.6ms)
+
+
+Started PATCH "/api/bucket_list_items/8" for ::1 at 2020-05-10 15:27:23 -0700
+Processing by Api::BucketListItemsController#update as JSON
+  Parameters: {"bucket_list_item"=>{"completed"=>"true"}, "id"=>"8"}
+  [1m[36mBucketListItem Load (0.3ms)[0m  [1m[34mSELECT  "bucket_list_items".* FROM "bucket_list_items" WHERE "bucket_list_items"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:28
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[36mBucketListItem Update (0.4ms)[0m  [1m[33mUPDATE "bucket_list_items" SET "completed" = $1, "updated_at" = $2 WHERE "bucket_list_items"."id" = $3[0m  [["completed", true], ["updated_at", "2020-05-10 22:27:23.536666"], ["id", 8]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  Rendering api/bucket_list_items/show.json.jbuilder
+  Rendered api/bucket_list_items/show.json.jbuilder (0.4ms)
+Completed 200 OK in 12ms (Views: 7.4ms | ActiveRecord: 1.6ms)
+
+
+Started PATCH "/api/bucket_list_items/9" for ::1 at 2020-05-10 15:27:26 -0700
+Processing by Api::BucketListItemsController#update as JSON
+  Parameters: {"bucket_list_item"=>{"completed"=>"true"}, "id"=>"9"}
+  [1m[36mBucketListItem Load (0.3ms)[0m  [1m[34mSELECT  "bucket_list_items".* FROM "bucket_list_items" WHERE "bucket_list_items"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:28
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[36mBucketListItem Update (0.3ms)[0m  [1m[33mUPDATE "bucket_list_items" SET "completed" = $1, "updated_at" = $2 WHERE "bucket_list_items"."id" = $3[0m  [["completed", true], ["updated_at", "2020-05-10 22:27:26.061546"], ["id", 9]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  Rendering api/bucket_list_items/show.json.jbuilder
+  Rendered api/bucket_list_items/show.json.jbuilder (0.4ms)
+Completed 200 OK in 11ms (Views: 6.8ms | ActiveRecord: 1.2ms)
+
+
+Started PATCH "/api/bucket_list_items/8" for ::1 at 2020-05-10 15:27:27 -0700
+Processing by Api::BucketListItemsController#update as JSON
+  Parameters: {"bucket_list_item"=>{"completed"=>"false"}, "id"=>"8"}
+  [1m[36mBucketListItem Load (0.3ms)[0m  [1m[34mSELECT  "bucket_list_items".* FROM "bucket_list_items" WHERE "bucket_list_items"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:28
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[36mBucketListItem Update (0.4ms)[0m  [1m[33mUPDATE "bucket_list_items" SET "completed" = $1, "updated_at" = $2 WHERE "bucket_list_items"."id" = $3[0m  [["completed", false], ["updated_at", "2020-05-10 22:27:27.053735"], ["id", 8]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  Rendering api/bucket_list_items/show.json.jbuilder
+  Rendered api/bucket_list_items/show.json.jbuilder (0.6ms)
+Completed 200 OK in 13ms (Views: 7.3ms | ActiveRecord: 1.7ms)
+
+
+Started PATCH "/api/bucket_list_items/9" for ::1 at 2020-05-10 15:27:27 -0700
+Processing by Api::BucketListItemsController#update as JSON
+  Parameters: {"bucket_list_item"=>{"completed"=>"false"}, "id"=>"9"}
+  [1m[36mBucketListItem Load (0.3ms)[0m  [1m[34mSELECT  "bucket_list_items".* FROM "bucket_list_items" WHERE "bucket_list_items"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:28
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[36mBucketListItem Update (0.4ms)[0m  [1m[33mUPDATE "bucket_list_items" SET "completed" = $1, "updated_at" = $2 WHERE "bucket_list_items"."id" = $3[0m  [["completed", false], ["updated_at", "2020-05-10 22:27:27.452581"], ["id", 9]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  Rendering api/bucket_list_items/show.json.jbuilder
+  Rendered api/bucket_list_items/show.json.jbuilder (0.4ms)
+Completed 200 OK in 13ms (Views: 6.9ms | ActiveRecord: 1.7ms)
+
+
+Started PATCH "/api/bucket_list_items/8" for ::1 at 2020-05-10 15:27:29 -0700
+Processing by Api::BucketListItemsController#update as JSON
+  Parameters: {"bucket_list_item"=>{"completed"=>"true"}, "id"=>"8"}
+  [1m[36mBucketListItem Load (0.3ms)[0m  [1m[34mSELECT  "bucket_list_items".* FROM "bucket_list_items" WHERE "bucket_list_items"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:28
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[36mBucketListItem Update (0.3ms)[0m  [1m[33mUPDATE "bucket_list_items" SET "completed" = $1, "updated_at" = $2 WHERE "bucket_list_items"."id" = $3[0m  [["completed", true], ["updated_at", "2020-05-10 22:27:29.576034"], ["id", 8]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  Rendering api/bucket_list_items/show.json.jbuilder
+  Rendered api/bucket_list_items/show.json.jbuilder (0.5ms)
+Completed 200 OK in 12ms (Views: 7.2ms | ActiveRecord: 1.5ms)
+
+
+Started PATCH "/api/bucket_list_items/9" for ::1 at 2020-05-10 15:27:31 -0700
+Processing by Api::BucketListItemsController#update as JSON
+  Parameters: {"bucket_list_item"=>{"completed"=>"true"}, "id"=>"9"}
+  [1m[36mBucketListItem Load (0.3ms)[0m  [1m[34mSELECT  "bucket_list_items".* FROM "bucket_list_items" WHERE "bucket_list_items"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:28
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[36mBucketListItem Update (0.3ms)[0m  [1m[33mUPDATE "bucket_list_items" SET "completed" = $1, "updated_at" = $2 WHERE "bucket_list_items"."id" = $3[0m  [["completed", true], ["updated_at", "2020-05-10 22:27:31.388851"], ["id", 9]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  Rendering api/bucket_list_items/show.json.jbuilder
+  Rendered api/bucket_list_items/show.json.jbuilder (0.5ms)
+Completed 200 OK in 12ms (Views: 7.1ms | ActiveRecord: 1.5ms)
+
+
+Started PATCH "/api/bucket_list_items/9" for ::1 at 2020-05-10 15:27:33 -0700
+Processing by Api::BucketListItemsController#update as JSON
+  Parameters: {"bucket_list_item"=>{"completed"=>"false"}, "id"=>"9"}
+  [1m[36mBucketListItem Load (0.3ms)[0m  [1m[34mSELECT  "bucket_list_items".* FROM "bucket_list_items" WHERE "bucket_list_items"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:28
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[36mBucketListItem Update (0.4ms)[0m  [1m[33mUPDATE "bucket_list_items" SET "completed" = $1, "updated_at" = $2 WHERE "bucket_list_items"."id" = $3[0m  [["completed", false], ["updated_at", "2020-05-10 22:27:33.007084"], ["id", 9]]
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/bucket_list_items_controller.rb:29
+  Rendering api/bucket_list_items/show.json.jbuilder
+  Rendered api/bucket_list_items/show.json.jbuilder (0.5ms)
+Completed 200 OK in 14ms (Views: 7.7ms | ActiveRecord: 1.8ms)
+
+

@@ -6,7 +6,7 @@ import { removeErrors } from '../../actions/session_actions'
 
 const mSTP = state => ({
     currentUser: state.entities.users[state.session.id],
-    bucketListItems: Object.values(state.entities.bucketListItems),
+    bucketListItems: Object.values(state.entities.bucketListItems).sort((a,b) => a.completed - b.completed),
     errors: Object.values(state.errors)
 })
 
