@@ -57,8 +57,8 @@ class BucketListIndexItem extends React.Component {
             <div className="bucket-list-item">
                 {this.state.edit ?
                 <h3>
-                    <input className="edit" type="text" placeholder={this.state.name} onChange={(e) => this.updateField(e, 'name')}/>
-                        <input className="edit" type="text" placeholder={url ? url : "Add URL"} onChange={(e) => this.updateField(e, 'url')}/>
+                    <input className="edit" type="text" value={this.state.name} onChange={(e) => this.updateField(e, 'name')}/>
+                        <input className="edit" type="text" value={this.state.url ? this.state.url : "Add URL"} onChange={(e) => this.updateField(e, 'url')}/>
                     <span onClick={this.save} className="save">save</span>
                 </h3> :
                 <h3 
