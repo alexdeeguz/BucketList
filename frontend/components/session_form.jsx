@@ -10,6 +10,8 @@ class SessionForm extends React.Component {
         }
 
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.uppercase = this.uppercase.bind(this)
+        this.specialChar = this.specialChar.bind(this)
     }
 
     updateField(e, field) {
@@ -24,10 +26,27 @@ class SessionForm extends React.Component {
             .then(() => this.props.history.push('bucket-list'))
     }
 
+    uppercase() {
+        const alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        for (let i = 0; i < this.state.password.length; i++) {
+            if (alpha.includes(this.state.password[i])) return true
+        }
+        return false
+    }
+
+    specialChar() {
+        const specialChars = `!@#$%^&*():;"''/?><,[]{}.`
+        for (let i = 0; i < this.state.password.length; i++) {
+            if (specialChars.includes(this.state.password[i])) return true
+        }
+        return false
+    }
+
     render() {
+        const errors = this.props.errors
         if (this.props.formType === 'login') {
             return (
-                <div>
+                <div className="session-form">
                     <form>
                         <input 
                             type="text" 
@@ -41,14 +60,15 @@ class SessionForm extends React.Component {
                             value={this.state.password}
                             onChange={(e) => this.updateField(e, 'password')}
                         /><br/>
-                        <button onClick={this.handleSubmit}>{this.props.formType.toUpperCase()}</button>
-                        <Link to='/signup'>Register</Link>
+                        <h3 onClick={this.handleSubmit}>{this.props.formType.toUpperCase()}</h3>
+                        <Link id="link" to='/signup'><h3>Register</h3></Link>
                     </form>
+                        <p id="errors">{errors.join(" ")}</p>
                 </div>
             )
         } else {
             return (
-                <div>
+                <div className="session-form">
                     <form>
                         <input
                             type="text"
@@ -62,9 +82,15 @@ class SessionForm extends React.Component {
                             value={this.state.password}
                             onChange={(e) => this.updateField(e, 'password')}
                         /><br />
-                        <button onClick={this.handleSubmit}>{this.props.formType.toUpperCase()}</button>
-                        <Link to='/login'>Back</Link>
+
+                        <h3 onClick={this.handleSubmit}>{this.props.formType.toUpperCase()}</h3>
+                        <Link id="link" to='/login'><h3>Back</h3></Link>
                     </form>
+                        <div className="requirements">
+                            <span className={this.state.password.length >= 6 ? "good" : "bad"}>Password must be at least 6 characters.</span>
+                            <span className={this.uppercase() ? "good" : "bad"}>Password must have at least one uppercase letter.</span>
+                            <span className={this.specialChar() ? "good" : "bad"}>Password must have at least one special character.</span>
+                        </div>
                 </div>
             )
         }

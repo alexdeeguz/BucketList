@@ -8,7 +8,7 @@ import BucketListIndexContainer from './containers/bucket_list_index_container'
 const App = () => (
     <div>
         <Switch>
-            <Route path='/login' component={LoginContainer} />
+            <AuthRoute path='/login' component={LoginContainer} />
             <AuthRoute path='/signup' component={SignupContainer} />
             <ProtectedRoute path='/bucket-list' component={BucketListIndexContainer} />
             <ProtectedRoute path='/' component={BucketListIndexContainer} />

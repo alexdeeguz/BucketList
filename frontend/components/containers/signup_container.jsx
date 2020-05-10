@@ -4,7 +4,7 @@ import { signupUser, removeErrors } from '../../actions/session_actions'
 
 
 const mSTP = state => ({
-    errors: state.errors,
+    errors: Object.values(state.errors.session),
     formType: 'sign up'
 })
 

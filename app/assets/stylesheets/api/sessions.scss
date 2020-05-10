@@ -1,3 +1,86 @@
 // Place all the styles related to the api/sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+body { 
+    background-color: #1a1919;
+}
+
+.session-form {
+    // border: 1px solid red;
+    margin-top: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.session-form > form > input {
+    margin-bottom: 15%;
+    padding: 10px;
+    text-align: center;
+    font-size: 15pt;
+    background-color: #1a1919;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #ca7df9;
+    color: #ca7df9;
+}
+
+.session-form > form > input::placeholder {
+    color: #ca7df9;
+    letter-spacing: 3px;
+}
+
+.session-form > form > h3 {
+    color: white;
+    // border: 1px solid red;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    background-color: purple;
+    cursor: pointer;
+    padding: 5px;
+    box-shadow: -1px 2px white;
+    border-radius: 5px;
+    transition: ease 0.5s;
+    width: 100%;
+    margin-top: 1%; 
+}
+
+.session-form > form > h3:hover {
+    color: purple;
+    box-shadow: -1px 2px purple;
+    background-color: white;
+    width: 60%;
+    transition: ease 0.5s;
+}
+
+#link {
+    text-decoration: none;
+}
+
+#errors {
+    color: red;
+}
+
+#account-requirements {
+    color: red;
+}
+
+.requirements {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.good {
+    color: green;
+}
+
+.bad {
+    color: red;
+}
+
