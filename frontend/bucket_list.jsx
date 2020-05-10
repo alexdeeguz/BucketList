@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import configureStore from './store/store'
 import Root from './components/root'
-import { fetchBucketListItems } from './actions/bucket_list_item_actions'
+
 document.addEventListener('DOMContentLoaded', () => {
     let store;
     if (window.currentUser) {
@@ -22,5 +22,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.getState = store.getState
     window.dispatch = store.dispatch
-    window.fetchBucketListItems = fetchBucketListItems
 })

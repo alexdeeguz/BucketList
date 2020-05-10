@@ -12,6 +12,18 @@ class SessionForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this)
         this.uppercase = this.uppercase.bind(this)
         this.specialChar = this.specialChar.bind(this)
+        this.usernameAvailable = this.usernameAvailable.bind(this)
+    }
+
+    componentDidMount() {
+        if (this.props.formType === 'sign up') {
+            this.props.getAllUsers()
+        }
+    }
+
+    usernameAvailable() {
+        const usernames = this.props.users.map(el => el.username)
+        return !usernames.includes(this.state.username)
     }
 
     updateField(e, field) {
@@ -87,6 +99,7 @@ class SessionForm extends React.Component {
                         <Link id="link" to='/login'><h3>Back</h3></Link>
                     </form>
                         <div className="requirements">
+                            {this.state.username === "" ? <span className="bad">Username can't be blank</span> : <span className={this.usernameAvailable() ? "good" : "bad"}>Username is available</span>}
                             <span className={this.state.password.length >= 6 ? "good" : "bad"}>Password must be at least 6 characters.</span>
                             <span className={this.uppercase() ? "good" : "bad"}>Password must have at least one uppercase letter.</span>
                             <span className={this.specialChar() ? "good" : "bad"}>Password must have at least one special character.</span>
