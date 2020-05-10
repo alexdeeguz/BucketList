@@ -221,6 +221,14 @@ body {
         // border: 1px solid red;
     }
 
+    #edit-icon {
+        width: 15px;
+    }
+
+    #delete-icon {
+        width: 20px;
+    }
+
     #logout-button {
         cursor: pointer;
         transition: ease 0.5s;
@@ -252,5 +260,22 @@ body {
 
     #selected-filter {
         color: #ca7df9;
+    }
+
+    .edit {
+        background-color: #1a1919;
+        color: #fff8dc;
+        font-size: 15pt;
+        outline: none;
+        border: none;
+    }
+
+    .save {
+        font-size: 8pt;
+        cursor: pointer;
+    }
+
+    #edit-button {
+        cursor: pointer;
     }
 
