@@ -123,7 +123,7 @@ class BucketListIndex extends React.Component {
                                 >ACTIVITIES</h3>
                             </div>
                             <div>
-                            {items.map(item => <IndexItem key={item.id} item={item} deleteItem={this.props.deleteItem} done={this.props.done}/>)}
+                            {items.map(item => <IndexItem key={item.id} item={item} deleteItem={this.props.deleteItem} editItem={this.props.editItem}/>)}
                             </div>
                         </div>
                     </div>

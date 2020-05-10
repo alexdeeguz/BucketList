@@ -34,5 +34,5 @@ export const addBucketListItem = item => dispatch => BucketListItemAPI.createIte
 export const deleteBucketListItem = id => dispatch => BucketListItemAPI.deleteItem(id)
     .then(() => dispatch(removeItem(id)))
 
-export const completeBucketListItem = (id, item) => dispatch => BucketListItemAPI.updateItem(id, item)
+export const updateBucketListItem = (id, item) => dispatch => BucketListItemAPI.updateItem(id, item)
     .then(updatedItem => dispatch(receiveItem(updatedItem)))

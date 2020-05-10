@@ -26,7 +26,10 @@ class BucketListIndexItem extends React.Component {
             name: this.state.name,
             url: this.state.url
         }
-        
+        this.props.editItem(this.props.item.id, item)
+            .then(this.setState({
+                edit: false
+            }))
     }
 
     handleMouseover(e) {
@@ -43,7 +46,7 @@ class BucketListIndexItem extends React.Component {
 
     updateItem() {
         const completed = !this.props.item.completed
-        this.props.done(this.props.item.id, {
+        this.props.editItem(this.props.item.id, {
             completed: completed
         })
     }
